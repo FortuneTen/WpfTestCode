@@ -1,0 +1,87 @@
+﻿<Window xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfTestCode"
+        x:Class="WpfTestCode.MainWindow"
+        mc:Ignorable="d"
+        d:DataContext="{d:DesignInstance local:MainWindowViewModel}"
+        Title="MainWindow" Height="465" Width="400">
+    <Grid HorizontalAlignment="Center" VerticalAlignment="Center" >
+        <Grid.Resources>
+            <Style TargetType="{x:Type TextBlock}">
+                <Setter Property="Height" Value="16"/>
+                <Setter Property="Margin" Value="2,6"/>
+                <Setter Property="VerticalAlignment" Value="Center"/>
+            </Style>
+            <Style TargetType="{x:Type TextBox}">
+                <Setter Property="Height" Value="21"/>
+                <Setter Property="Margin" Value="2,6"/>
+                <Setter Property="VerticalAlignment" Value="Center"/>
+            </Style>
+        </Grid.Resources>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="60"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="2*"/>
+        </Grid.ColumnDefinitions>
+
+        <!--имя сотрудника-->
+        <TextBlock Grid.Row="0" Grid.ColumnSpan="2"
+                   Foreground="Black" Background="#FF5DEA9D" VerticalAlignment="Center"
+                   Text="Карточка Сотрудника" TextAlignment="Center"  />
+        <!--имя сотрудника-->
+
+        <TextBlock Grid.Row="1" Grid.Column="0" 
+                   TextWrapping="Wrap" Text="Имя сотрудника" />
+        <TextBox Grid.Row="1" Grid.Column="1" 
+                 Text="{Binding Path=NameEmployee, Mode=TwoWay}" />
+
+        <TextBlock Grid.Row="2" Grid.Column="0" 
+                   HorizontalAlignment="Left" VerticalAlignment="Top"
+                   TextWrapping="Wrap" Text="Numeric" TextAlignment="Center" />
+        <TextBox Grid.Row="2" Grid.Column="1"
+                 Text="{Binding Path=Year, Mode=TwoWay}"  
+                 PreviewTextInput="TextBox_PreviewTextInput" />
+
+        <TextBlock Grid.Row="3" Grid.Column="0" 
+                   HorizontalAlignment="Left" VerticalAlignment="Top"
+                   TextWrapping="Wrap" Text="Date" TextAlignment="Center"/>
+        <Calendar Grid.Row="3" Grid.Column="1" 
+                  HorizontalAlignment="Left" VerticalAlignment="Top"
+                  SelectedDate="{Binding Path=DateBirthday, Mode=TwoWay}"/>
+
+        <!--
+        DisplayDate="{Binding Path=DATEBIRTHDAY1, Mode=TwoWay}"
+        SelectedDate="{Binding Path=DATEBIRTHDAY1, Mode=TwoWay}" 
+        -->
+        <!--не понял как для календаря сделать привязку-->
+
+        <TextBlock Grid.Row="4" Grid.Column="0" 
+                   Text="ComboBox" />
+        <ComboBox  Grid.Row="4" Grid.Column="1" 
+                   VerticalAlignment="Top"
+                   SelectedItem="{Binding Path=SelectedItem, Mode=TwoWay}">
+            <ComboBoxItem Content="1"/>
+            <ComboBoxItem Content="2"/>
+            <ComboBoxItem Content="3"/>
+        </ComboBox>
+
+        <TextBlock Grid.Row="5" Grid.Column="0" 
+                   HorizontalAlignment="Left" VerticalAlignment="Top" 
+                   TextWrapping="Wrap" Text="Адрес" TextAlignment="Center" />
+        <TextBox Grid.Row="5" Grid.Column="1" 
+                 Text="{Binding Path=Adress, Mode=TwoWay}"/>
+
+        <Button Grid.Row="6" Grid.ColumnSpan="2" 
+                Content="Для будущего кода" Command="{Binding FirstIncrementCommand}"/>
+    </Grid>
+</Window>
