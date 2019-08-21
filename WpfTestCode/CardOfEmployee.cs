@@ -10,7 +10,7 @@ using System.Windows.Input;
 
 namespace WpfTestCode
 {
-    class MainWindowViewModel : INotifyPropertyChanged
+    public class UserFormViewModel : INotifyPropertyChanged
     {
         private DelegateCommand firstIncrementCommand;
 
