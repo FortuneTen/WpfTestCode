@@ -20,13 +20,20 @@ namespace WpfTestCode
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
-    public partial class MainWindow : Window  
+    public partial class UserForm : Window
     {
-        public MainWindow()
+        public UserForm()
         {
             InitializeComponent();
+            this.DataContext = new UserFormViewModel();
+        }
 
-            this.DataContext = new MainWindowViewModel();
+        public UserFormViewModel USERFORM
+        {
+            get
+            {
+                return (UserFormViewModel)DataContext;
+            }
         }
 
         private void TextBox_PreviewTextInput(object sender, TextCompositionEventArgs e)
@@ -37,7 +44,14 @@ namespace WpfTestCode
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-           
+            this.DialogResult = true;
+            this.Close();
         }
+
+        private UserFormViewModel GetModel()
+        {
+            return (UserFormViewModel)DataContext;
+        }
+
     }
 }

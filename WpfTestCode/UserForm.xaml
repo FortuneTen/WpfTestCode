@@ -3,9 +3,9 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfTestCode"
-        x:Class="WpfTestCode.MainWindow"
+        x:Class="WpfTestCode.UserForm"
         mc:Ignorable="d"
-        d:DataContext="{d:DesignInstance local:MainWindowViewModel}"
+        d:DataContext="{d:DesignInstance local:UserFormViewModel}"
         Title="MainWindow" Height="465" Width="400">
     <Grid HorizontalAlignment="Center" VerticalAlignment="Center" >
         <Grid.Resources>
@@ -49,8 +49,8 @@
                    HorizontalAlignment="Left" VerticalAlignment="Top"
                    TextWrapping="Wrap" Text="Numeric" TextAlignment="Center" />
         <TextBox Grid.Row="2" Grid.Column="1"
-                 Text="{Binding Path=Year, Mode=TwoWay}"  
-                 PreviewTextInput="TextBox_PreviewTextInput" />
+                 Text="{Binding Path=Year, Mode=TwoWay}" PreviewTextInput="TextBox_PreviewTextInput"      />
+               
 
         <TextBlock Grid.Row="3" Grid.Column="0" 
                    HorizontalAlignment="Left" VerticalAlignment="Top"
@@ -82,6 +82,6 @@
                  Text="{Binding Path=Adress, Mode=TwoWay}"/>
 
         <Button Grid.Row="6" Grid.ColumnSpan="2" 
-                Content="Для будущего кода" Command="{Binding FirstIncrementCommand}"/>
+                Content="Добавить нового сотрудника" Command="{Binding FirstIncrementCommand}" Click="Button_Click" IsDefault="True"  />
     </Grid>
 </Window>
