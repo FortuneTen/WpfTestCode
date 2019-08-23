@@ -38,14 +38,14 @@ namespace WpfTestCode
 
         private void TextBox_PreviewTextInput(object sender, TextCompositionEventArgs e)
         {
-            if (!char.IsDigit(Convert.ToChar(e.Text)))
+            if (!char.IsDigit(e.Text[0]))
                 e.Handled = true;
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            this.DialogResult = true;
-            this.Close();
+            DialogResult = true;
+            Close();
         }
 
         private UserFormViewModel GetModel()

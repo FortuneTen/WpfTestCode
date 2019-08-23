@@ -72,19 +72,19 @@ namespace WpfTestCode
             }
         }
 
-        private string year;
-        public string Year
+        private string salary;
+        public string Salary
         {
-            get { return year; }
+            get { return salary; }
             set
             {
-                year = value;
-                OnPropertyChanged(nameof(Year));
+                salary = value;
+                OnPropertyChanged(nameof(Salary));
             }
         }
 
-        private DateTime dateBirthday;
-        public DateTime DateBirthday
+        private string dateBirthday;
+        public string DateBirthday
         {
             get { return dateBirthday; }
             set
@@ -94,14 +94,14 @@ namespace WpfTestCode
             }
         }
 
-        private object selectedItem;
-        public object SelectedItem
+        private string multiplysalary;
+        public string MultiplySalary
         {
-            get { return selectedItem; }
+            get { return multiplysalary; }
             set
             {
-                selectedItem = value;
-                OnPropertyChanged(nameof(SelectedItem));
+                multiplysalary = value;
+                OnPropertyChanged(nameof(MultiplySalary));
             }
         }
 
