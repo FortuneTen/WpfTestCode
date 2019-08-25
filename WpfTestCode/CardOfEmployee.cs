@@ -89,7 +89,7 @@ namespace WpfTestCode
             get { return dateBirthday; }
             set
             {
-                dateBirthday = value;
+                dateBirthday = Convert.ToDateTime(value).ToString("dd.MM.yyyy");
                 OnPropertyChanged(nameof(DateBirthday));
             }
         }

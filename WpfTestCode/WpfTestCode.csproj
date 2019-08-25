@@ -80,7 +80,7 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="CardOfEmployee.cs" />
-    <Compile Include="Class1.cs" />
+    <Compile Include="IDelegateCommand.cs" />
     <Compile Include="UserForm.xaml.cs">
       <DependentUpon>UserForm.xaml</DependentUpon>
       <SubType>Code</SubType>
