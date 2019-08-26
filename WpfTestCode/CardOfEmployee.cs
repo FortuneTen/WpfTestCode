@@ -2,14 +2,31 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Diagnostics;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
+using System.Windows.Data;
 using System.Windows.Input;
 
 namespace WpfTestCode
 {
+
+    public class DateConvert : IValueConverter
+    {
+        public static DateConvert InstaConvert = new DateConvert();
+        public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
+        {
+            return ((DateTime)value).ToString("dd.MM.yyyy HH:mm:ss");
+        }
+
+        public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
+        {
+            throw new NotImplementedException();
+        }
+    }
+
     public class UserFormViewModel : INotifyPropertyChanged
     {
         private DelegateCommand firstIncrementCommand;
@@ -83,13 +100,16 @@ namespace WpfTestCode
             }
         }
 
-        private string dateBirthday;
-        public string DateBirthday
+        
+       
+
+        private DateTime dateBirthday;
+        public DateTime DateBirthday
         {
             get { return dateBirthday; }
             set
             {
-                dateBirthday = Convert.ToDateTime(value).ToString("dd.MM.yyyy");
+                dateBirthday = value;
                 OnPropertyChanged(nameof(DateBirthday));
             }
         }

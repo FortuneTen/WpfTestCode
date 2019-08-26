@@ -54,7 +54,7 @@
         <TextBlock Grid.Row="3" Grid.Column="0" 
                    HorizontalAlignment="Left" VerticalAlignment="Top"
                    TextWrapping="Wrap" TextAlignment="Center" Margin="5,75,0,0" Height="36" Width="85"><Run Text="Дата "/><LineBreak/><Run Text="Рождения"/><LineBreak/><Run/></TextBlock>
-        <Calendar Grid.Row="3" Grid.Column="1"   SelectedDate="{Binding Path=DateBirthday, Mode=TwoWay}"
+        <Calendar Grid.Row="3" Grid.Column="1"   SelectedDate="{Binding Path=DateBirthday, Mode=TwoWay }"
                   HorizontalAlignment="Left" VerticalAlignment="Top"/>
 
         <TextBlock Grid.Row="4" Grid.Column="0" Text="Множитель ЗП "/>

@@ -5,19 +5,19 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfTestCode"
         mc:Ignorable="d"
-        Title="StartForm" Height="500" Width="500" Loaded="Window_Loaded" HorizontalAlignment="Center" VerticalAlignment="Center" MinWidth="500" MinHeight="500">
-    <Grid  ShowGridLines="True" Margin="9,20,0,19" VerticalAlignment="Center" HorizontalAlignment="Left" Height="431" Width="479">
+        Title="StartForm" Height="500" Width="500" Loaded="Window_Loaded" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" MinWidth="500" MinHeight="500">
+    <Grid  ShowGridLines="True" Margin="9,20,0,19" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"   >
         <Grid.RowDefinitions>
-            <RowDefinition Height="217*"/>
-            <RowDefinition Height="121*"/>
+            <RowDefinition/>
+            <RowDefinition Height="auto" MinHeight="214"/>
         </Grid.RowDefinitions>
 
-        <DataGrid x:Name="UserGrid"  Padding="10" Margin="0,0,14,102" AutoGenerateColumns="False" Height="170" VerticalAlignment="Bottom" >
+        <DataGrid x:Name="UserGrid"  Padding="10" Margin="7,0,7,6" AutoGenerateColumns="False"  VerticalAlignment="Stretch"  >
             <DataGrid.Columns >
                 <DataGridTextColumn Binding="{Binding NameEmployee}"   Header="Имя" Width="50"/>
                 <DataGridTextColumn Binding="{Binding Salary}"  Header="ЗП" Width="50"/>
                 <DataGridTextColumn Binding="{Binding MultiplySalary}" Header="Множитель ЗП" Width="95"/>
-                <DataGridTextColumn Binding="{Binding DateBirthday}" Header="Дата Рождения" Width="100"/>
+                <DataGridTextColumn Binding="{Binding  DateBirthday, Converter={x:Static local:DateConvert.InstaConvert} }" Header="Дата Рождения" Width="100" />
                 <DataGridTextColumn Binding="{Binding Adress}" Header="Адрес" Width="50"/>
             </DataGrid.Columns>
         </DataGrid>
